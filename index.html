@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gửi Em, Người Anh Yêu</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+
+        :root {
+            --primary-color: #ff7e8e; /* Mau hong nhe */
+            --secondary-color: #fff0f1; /* Mau nen */
+            --text-color: #555;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            overflow: hidden; /* An thanh cuon */
+        }
+
+        .section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.8s ease-in-out, visibility 0.8s;
+            padding: 20px;
+            box-sizing: border-box;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .section.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .content-box {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            animation: fadeIn 1s ease-in-out;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        @keyframes fadeIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h1, h2 {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        p {
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+        
+        .arrow-button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 2em;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            line-height: 60px;
+        }
+
+        .arrow-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(255, 126, 142, 0.5);
+        }
+
+        /* Slideshow Styles */
+        #slideshow-section img {
+            max-width: 100%;
+            max-height: 60vh;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        #slideshow-caption {
+            font-style: italic;
+            min-height: 50px; /* Giu chieu cao on dinh */
+            color: #666;
+            font-size: 1em;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        
+        .nav-button {
+            background-color: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .content-box {
+                padding: 25px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            p {
+                font-size: 1em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="thank-you-section" class="section active">
+        <div class="content-box">
+            <h1>Gửi em Giangg!</h1>
+            <p>
+                Cảm ơn em vì đã bên anh 2 tháng vừa rồi, đây là chút cố gắng của anh thôi mong em xem hết nhaaa
+                </p>
+            <button id="start-slideshow-btn" class="arrow-button">&#8594;</button>
+        </div>
+    </div>
+
+    <div id="slideshow-section" class="section">
+        <div class="content-box">
+            <img id="slideshow-image" src="" alt="Kỉ niệm của chúng ta">
+            <p id="slideshow-caption"></p>
+            <div class="nav-buttons">
+                <button id="prev-btn" class="nav-button">Ảnh Trước</button>
+                <button id="next-btn" class="nav-button">Ảnh Tiếp Theo</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="final-message-section" class="section">
+        <div class="content-box">
+            <h2>Và em à...</h2>
+            <p>
+                Cảm ơn em vì đã yêu anh trong suốt 2 tháng vừa qua, cho dù 2 tháng vừa rồi không phải là quá nhiều nhưng em đã để lại cho anh rất nhiều kỉ niệm. Mới ngày nào anh và em đi ăn với nhau lần đầu tại gần Bắc Sơn, đi học lần đầu với nhau tại Dutra, và lần anh tỏ tình em tại Ban Công tính đến giờ là 2 tháng 2 ngày gòi. Tuy rằng bản thân anh cũng nhiều lúc hay tự suy nghĩ từ đấy khiến em buồn, điều anh sợ nhất là khi em buồn anh thấy ân hận lắm. Qua những việc đó anh đều tự dặn bản thân mình sẽ không được phép mắc lại lần nào vì nó khiến cho em buồn thêm thôi :(. Mong rằng sau này anh và em còn có thể yêu nhau lâu thật lâu hơn nữa, sau này dù có học xa với nhau hay gì thì mình vẫn mãi luôn bên nhau, mãi luôn yêu nhau như lời hứa của anh với em. Anh yêu Giang nhiuuu!)
+                
+                </p>
+        </div>
+    </div>
+
+<script>
+    // =======================================================
+    // == THÊM HÌNH ẢNH VÀ LỜI THOẠI CỦA BẠN VÀO ĐÂY ==
+    //
+    // Hướng dẫn:
+    // 1. Mỗi cặp `{ image: 'ten_file_anh.jpg', caption: 'Loi thoai cua ban.' }` là một ảnh.
+    // 2. Tên file ảnh phải đặt đúng với tên file bạn đã lưu.
+    // 3. Để thêm ảnh mới, chỉ cần copy một dòng, dán xuống dưới và thay đổi thông tin.
+    // =======================================================
+    const memories = [
+        { 
+            image: 'hinh11.jpg', 
+            caption: 'Đây là hôm mà Hưng với Giang đi dutra xong sau đó Hưng với Giang đi ăn Jolibee nè, đây cũm là ảnh đầu tiên mà Giang up Hưng lên str đó với màu đơn sắc kèm bài Thác rơi tự do ắ =))).' 
+        },
+        { 
+            image: 'h2.jpg', 
+            caption: 'Đây là lần đầu tin Giang với Hưng đi ăn Jolibee ắ, xong hôm đấy Hưng siu siu vui khi được bóc gà cho Giang .' 
+        },
+        { 
+            image: 'h3.jpg', 
+            caption: 'Hôm đầu tin đi photobooth nè mom, hôm đấy Hưng tìm mãi mới thấy Photoism. Sau đấy Giang với Hưng chụp siu siu lỗi, Hưng siu xấu trong khi Giang rõ xinh. Hôm đấy được mỗi ảnh này là siu ưng và gòi Hưng up str lun' 
+        },
+        { 
+            image: 'h4.jpg', 
+            caption: 'Ảnh Giang và Hưng ptb nìeee.' 
+        },
+        { 
+            image: 'h5.jpg', 
+            caption: 'Đây là lần 2 Hưng và Giang đi Photobooth. Lần này thì thành công mĩ mãn lun. Hôm đó sáng Giang bế giảng và chìu Hưng bế giảng. Hôm đó cũng là hôm Hưng đi ăng Manyose với Giang nữa. Khi mà Hưng được học bổng thì người Hưng nghĩ tới đầu tiên là Giang, cảm ơn Giang vì đã học hóa cùng Hưng trong suốt thời gian đó nhaa.' 
+        },
+        { 
+            image: 'h6.jpg', 
+            caption: 'Ảnh photobooth hôm đó nife, siu siu đẹp luôn..' 
+        },
+        { 
+            image: 'h7.jpg', 
+            caption: 'Đây là một trong những ảnh Hưng thích nhất lun, bức ảnh này là lúc Giang đi tri ân, bức ảnh này Giang thật sự rất rất đẹp ý, iu Giang nhìu lắmmm.' 
+        },
+       
+        // Thêm ảnh khác ở đây, ví dụ:
+        // { 
+        //     image: 'hinh5.jpg', 
+        //     caption: 'Lời thoại cho ảnh 5' 
+        // },
+    ];
+    // =======================================================
+    // == PHẦN DƯỚI NÀY BẠN KHÔNG CẦN CHỈNH SỬA GÌ THÊM ==
+    // =======================================================
+
+    const thankYouSection = document.getElementById('thank-you-section');
+    const slideshowSection = document.getElementById('slideshow-section');
+    const finalMessageSection = document.getElementById('final-message-section');
+    
+    const startBtn = document.getElementById('start-slideshow-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    const slideshowImage = document.getElementById('slideshow-image');
+    const slideshowCaption = document.getElementById('slideshow-caption');
+
+    let currentMemoryIndex = 0;
+
+    function showSection(sectionElement) {
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        sectionElement.classList.add('active');
+    }
+
+    function displayMemory(index) {
+        if (index >= 0 && index < memories.length) {
+            slideshowImage.src = memories[index].image;
+            slideshowCaption.textContent = memories[index].caption;
+        }
+    }
+
+    startBtn.addEventListener('click', () => {
+        showSection(slideshowSection);
+        displayMemory(0);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentMemoryIndex++;
+        if (currentMemoryIndex < memories.length) {
+            displayMemory(currentMemoryIndex);
+        } else {
+            // Khi xem hết ảnh, chuyển đến lời nhắn cuối cùng
+            showSection(finalMessageSection);
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentMemoryIndex > 0) {
+            currentMemoryIndex--;
+            displayMemory(currentMemoryIndex);
+        }
+    });
+
+</script>
+
+</body>
+</html>
